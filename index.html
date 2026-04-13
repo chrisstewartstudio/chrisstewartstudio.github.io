@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chris Stewarts Studio</title>
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: Trebuchet MS;
+}
+
+/* ---------- NAV ---------- */
+header {
+  background-color: #182c3c;
+  padding: 2rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  margin-right: 1rem;
+ font-family: Trebuchet MS;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #5b8fa8;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #f4f4f4;
+}
+
+.profile-img {
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: Trebuchet MS;
+  text-decoration: none;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
+  font-size: 1.3rem;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #1f3b4d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center; /* centers both buttons */
+  gap: 2rem;              /* space between buttons */
+  margin-top: 2rem;
+  margin-left: 2.1rem;
+}
+
+.btn:hover {
+  background-color: #2e5a6d;
+}
+
+/* ---------- WHAT I'M LEARNING SECTION ---------- */
+
+#what-im-learning {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: white;
+}
+
+#what-im-learning ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  max-width: 400px;
+  margin: 1rem auto;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 0;
+}
+
+#what-im-learning ul li {
+  margin-bottom: 0.8rem;
+}
+
+
+
+/* ---------- florida ---------- */
+#FloridaAdventures {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+}
+
+#FloridaAdventures h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#FloridaAdventures p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+/* Flex container for portfolio items */
+#florida-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual portfolio item */
+.florida-item {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.florida-item img {
+  width: 457px;
+  height: 457px;  /* fixed height for all images */
+  object-fit: cover; /* crops image to fit container without stretching */
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.florida-item h3 {
+  margin: 0.5rem 0;
+  font-size: 1.7rem;
+  color: #333;
+}
+
+.florida-item p {
+  font-size: 1.6rem;
+  color: #555;
+  margin: 0;
+}
+
+/* florida button */
+#FloridaAdventures > .btn {
+  margin-top: 0.0rem;
+background-color: #1f3b4d;
+}
+
+#FloridaAdventures > .btn:hover {
+  background-color: #2e5a6d;
+}
+
+
+/* ---------- CONTACT ---------- */
+#Contact {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+#Contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#Contact p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* Form styling */
+#Contact .Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+}
+
+#Contact .Form input,
+#Contact .Form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-color: #1f3b4d;
+}
+
+#Contact .Form textarea {
+  resize: both;
+}
+
+#Contact .Form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+#Contact .Form-buttons button {
+  padding: 0.8rem 1.5rem;
+  background-color: #1f3b4d;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#Contact .Form-buttons button:hover {
+  background-color: #2e5a6d;
+}
+
+#Contact .Social-links {
+  margin-top: 2rem;
+}
+
+#Contact .Social-links a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: #1f3b4d;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  
+}
+
+#Contact .Social-links a:hover {
+  color: #3a7a8c
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #182c3c;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2e5a6d;
+}
+
+/* THIS makes it work on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<header>
+  
+
+<nav>
+  <div class="logo">Chris Stewarts Studio</div>
+
+  <a href="#">Home</a>
+  <a href="about.html">About</a>
+
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Blog</a>
+
+    <div class="dropdown-menu">
+      <a href="#">Post 1</a>
+      <a href="#">Post 2</a>
+      <a href="#">Post 3</a>
+    </div>
+  </div>
+
+  <a href="#FloridaAdventures">Florida Adventures</a>
+  <a href="#Contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="IMG_0897.jpg" alt="Profile picture" class="profile-img">
+  <h2 id="main-title">Hi I'm Chris Stewart</h2>
+  <p>
+    I’m currently studying web development at DeVry University and working toward building clean, modern websites. I enjoy learning new tools and turning ideas into things people can actually use online. When I step away from the computer, I spend a lot of time playing the fiddle and working on music.
+  </p>
+ 
+<div class="hero-buttons">
+
+<a href="#what-im-learning" class="btn">Learn about what I do</a>
+
+<a href="https://chrisstewartstudio.tech/" target="_blank" class="btn">View My WordPress Projects</a>
+
+<a href="#" class="btn" id="toggle-skills">Toggle Skills</a>
+
+</div>
+</section>
+
+<!-- WORK -->
+
+<section id="what-im-learning">
+  <h2>What I'm Learning</h2>
+  <p>Here are the skills and tools I’m currently working with:</p>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>WordPress (chrisstewartstudio.tech)</li>
+    <li>Webflow (basic experience)</li>
+    <li>Wix (basic experience)</li>
+    <li>JavaScript (basic experience)</li>
+  </ul>
+</section>
+
+
+<!-- florida -->
+
+<section id="FloridaAdventures">
+  <h2>Recent Trip To Florida</h2>
+  <p>Here are a few moments I captured during my trip.</p>
+
+  <div id="florida-items">
+    <div class="florida-item">
+      <img src="motorcycle.jpg" alt="Motorcycle project">
+      <h3>Ride Mode</h3>
+      <p>Taking the scenic route, even if it’s just in Photoshop.</p>
+    </div>
+    <div class="florida-item">
+      <img src="sunset.jpg" alt="Sunset project">
+      <h3>Beach Vibes</h3>
+      <p>Sun, sand, and the perfect getaway.</p>
+    </div>
+    <div class="florida-item">
+      <img src="horse.jpg" alt="Horse project">
+      <h3>Saddle Up</h3>
+      <p>A little horseback adventure to keep things wild.</p>
+    </div>
+  </div>
+
+  <a href="#" class="btn">Catch the Full Trip</a>
+</section>
+
+<!-- CONTACT -->
+<section id="Contact">
+  <h2>Let’s Build Something Together</h2>
+  <p>Have a project in mind? I can help bring your ideas to life with clean, modern web design. Whether it’s a website, a small app, or just a concept you want to explore, I’m ready to make it happen.</p>
+
+  <form class="Form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+    <div class="Form-buttons">
+      <button type="submit">Send Message</button>
+      <button type="reset">Clear Form</button>
+    </div>
+  </form>
+
+  <h4>Find me on ...</h4>
+  
+<div class="Social-links">
+  
+<a href="https://www.linkedin.com/in/chris-stewart-157575266/" target="_blank">   LinkedIn</a>
+   
+ <a href="https://www.instagram.com/chris_sstewart/?hl=en" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/CStewart17" target="_blank">Facebook</a>
+    
+  </div>
+</section>
+</body>
+
+
+<script>
+ 
+console.log("JavaScript is connected");
+
+const blogBtn = document.getElementById("blog-btn");
+const blogMenu = document.getElementById("blog-menu");
+
+let isOpen = false;
+
+blogBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  console.log("clicked");
+
+  if (isOpen) {
+    blogMenu.style.display = "none";
+  } else {
+    blogMenu.style.display = "block";
+  }
+
+  isOpen = !isOpen;
+});
+
+</script>
+
+</body>
+</html>
